@@ -1,8 +1,18 @@
 class Database:
     def __init__(self):
         self.ManagerData = set([("akhil", "akhil")])
-        self.CustomerData = set([])
+        self.CustomerData = []
         self.Books = set()
+
+    def _addCustomer(self):
+        username = input("Enter username : ")
+        password = input("Enter password : ")
+        self.CustomerData.add((username, password))
+
+    def _addManager(self):
+        username = input("Enter username : ")
+        password = input("Enter password : ")
+        self.ManagerData.add((username, password))
 
     def _isvalid(self, user, passcode, type):
         # print(self.data)
