@@ -91,6 +91,7 @@ class LibraryManagementSystem:
 
 
 while(1):
+    # print(db.ManagerData)
     LoginType = int(input(" 1. Login \n 2. SignUp \n 3.Exit \n =>"))
 
     if LoginType == 1:
@@ -104,7 +105,15 @@ while(1):
             obj = LibraryManagementSystem(username, password, type)
 
     elif LoginType == 2:
-        print("SignUp *** \n")
+        print("*** SignUp *** \n")
+        print("Choose the signup type:\n 1. Manager \n2. Customer\n=>")
+        type = int(input())
+        if type == 1:
+            db._addManager()
+        elif type == 2:
+            db._addCustomer()
+        else:
+            print("Invalid Option Selected")
     else:
         if(LoginType not in (1, 2, 3)):
             print("Invalid Option")
